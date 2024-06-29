@@ -23,11 +23,11 @@ class News(models.Model):
     author = models.ForeignKey(User, 
                                on_delete=models.CASCADE,
                                related_name='author_news',
-                               verbose_name='Автор'
+                               verbose_name='Автор',
+                               blank=True
                                )
     class Meta:
         ordering = ['-pub_data']
-        verbos_name = 'Новость'
 
 
 class Comment(models.Model):
