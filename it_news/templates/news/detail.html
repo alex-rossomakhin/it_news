@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+  <a href="{% url 'news:list_news' %}">На главную</a>
+  <hr>
+  <article>            
+    <h2>{{ news.title }}</h2>            
+    <p>{{ news.text|truncatewords:15 }}</p>
+    <ul>
+    <li>Автор: {{ news.author }}</li>
+    <li>Дата: <small>{{ news.pub_data }}</small></li>
+    </ul>
+  </article>
+  <hr>
+{% endblock content %}

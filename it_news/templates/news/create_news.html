@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+  </form>
+  {% with data=form.instance %}
+    {% if form.is_valid %}
+    <h2>ID новой записи в БД: {{ data.id }}</h2>
+  {% endif %}
+{% endwith %}
+{% endblock %}
