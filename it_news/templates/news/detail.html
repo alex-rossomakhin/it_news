@@ -10,5 +10,6 @@
     <li>Дата: <small>{{ news.pub_data }}</small></li>
     </ul>
   </article>
+  <a href="{% url 'news:delete' news.pk %}">Удалить</a>
   <hr>
 {% endblock content %}

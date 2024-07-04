@@ -8,6 +8,7 @@
             <ul>
             <li>Автор: {{ news.author }}</li>
             <li>Дата: <small>{{ news.pub_data }}</small></li>
+            <li><a href="{% url 'news:detail' news.pk %}">Детали</a></li>            
             </ul>
         </article>
       {% if news.comment_set.all %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+  <a href="{% url 'news:list_news' %}">На главную</a>
+  <h2>Удалить новость?</h2>
+  <h3>{{ news.title }}</h3>
+  <hr>
+  <p>{{  news.text }}</p>
+  <form class="form-horizontal" method="post">
+    {% csrf_token %}
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" >Удалить</button>
+    </div>
+  </form>
+{% endblock content %}
